@@ -1,0 +1,7 @@
+POST http://localhost:3001/api/notes 
+Content-Type: application/json
+
+{
+    "title": "Lorem Ipsum1",
+    "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lobortis volutpat efficitur. In hac habitasse platea dictumst. Maecenas tempor porttitor leo, porta vehicula neque aliquet at. Nunc et justo consectetur, imperdiet lacus in, dictum odio. Nam ante ipsum, eleifend quis vestibulum ut, eleifend sed nunc. Sed ac nulla magna. Aenean eget pretium felis. Etiam ante nibh, consectetur non purus quis, congue dignissim arcu. Donec aliquam id nibh ultricies lobortis. Fusce ultricies elit quis iaculis posuere. Proin aliquam laoreet diam, vitae porta lectus sagittis ac."
+}

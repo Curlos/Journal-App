@@ -1,0 +1,7 @@
+PUT http://localhost:3001/api/notes/608f100d73cba01b2fec1242
+Content-Type: application/json
+
+{
+    "title": "Lorem Ipsum1 (Edited Note)",
+    "body": "Edited body"
+}
