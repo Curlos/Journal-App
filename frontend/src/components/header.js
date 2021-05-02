@@ -2,15 +2,18 @@ import { Nav, Navbar, Button } from 'react-bootstrap';
 
 const Header = () => {
     return (
-        <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="#home">Digital Journal | Create A Note</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
+        <Navbar bg="white" variant="">
+            <Nav className="container-fluid">
+                <Nav.Item id="journal-title">
+                    <Navbar.Brand to="/">Digital Journal | Create a Note</Navbar.Brand>
+                </Nav.Item>
+                <Nav.Item className="ml-auto">
+                    <Nav.Link>Log In</Nav.Link>
+                </Nav.Item>
+                <Nav.Item className="justify-content-end">
+                    <Nav.Link>Sign Up</Nav.Link>
+                </Nav.Item>
             </Nav>
-            <Button variant="link">Log In</Button>
-            <Button variant="link">Sign Up</Button>
-        </Navbar.Collapse>
         </Navbar>
     )
 }
