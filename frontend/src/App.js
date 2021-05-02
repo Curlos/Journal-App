@@ -1,10 +1,12 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button } from 'react-bootstrap';
+import Header from './components/header';
 
-function App() {
+const App = () => {
   return (
-    
+    <div>
+      <Header />
+    </div>
   );
 }
 
