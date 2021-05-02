@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+const config = require("./utils/config");
+const express = require("express");
+const app = express();
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const cors = require("cors");
+const notesRouter = require("./controllers/notes");
+const mongoose = require("mongoose");
+
+console.log("connecting to MongoDB");
+
+mongoose
+        .connect(config.MONGODB_URI, {
+          useNewUrlParser: true,
+          useUnifiedTopology: true,
+          useFindAndModify: false,
+          useCreateIndex: true,
+        })
+        .then(() => {
+          console.log("connected to MongoDB");
+        })
+        .catch((error) => {
+          console.log("error connecting to MongoDB: ", error.message);
+        });
+
+app.use(cors());
+app.use(express.json());
+
+app.use("/api/notes", notesRouter);
+
+// Testing
+if (process.env.NODE_ENV === "test") {
+  const testingRouter = require("./controllers/testing");
+  app.use("/api/testing", testingRouter);
 }
 
-export default App;
+module.exports = app;
+
