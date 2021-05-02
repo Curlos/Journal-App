@@ -34,9 +34,10 @@ notesRouter.put("/:id", (request, response, next) => {
 })
 
 notesRouter.delete("/:id", async (request, response) => {
-    console.log('deleting note...');
+    console.log('Deleting note...');
     await Note.findByIdAndRemove(request.params.id);
     response.status(204).end();
+    console.log('Deleted note!');
 })
 
 
